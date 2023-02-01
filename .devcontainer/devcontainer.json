@@ -1,0 +1,5 @@
+{
+	"name": "Outer.pl DevContainer",
+	"context": "../",
+	"dockerFile": "../Dockerfile"
+}
