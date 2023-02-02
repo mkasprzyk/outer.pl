@@ -17,8 +17,4 @@
   # Default build command.
   command = "yarn run generate"
 
-  environment = {
-    API_URL = "https://api.outer.pl",
-    BACKEND_URL = "https://api.outer.pl/graphql",
-    MEDIA_URL = "https://cdn.outer.pl"
-  }
+  environment = { API_URL = "https://api.outer.pl", BACKEND_URL = "https://api.outer.pl/graphql", MEDIA_URL = "https://cdn.outer.pl"}
