@@ -3,14 +3,12 @@ import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-import Gallery from '@browniebroke/gatsby-image-gallery'
-
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo seo={{ metaTitle: "Stories" }} />
+      <Seo seo={{ metaTitle: "Gear" }} />
       <main className="container flex mt-4">
-        <Gallery/>
+        Gear
       </main>
     </Layout>
   )

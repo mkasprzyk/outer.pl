@@ -3,19 +3,22 @@ import React from "react"
 
 const Navbar = () => {
   return (
-    <header className="bg-primary-200">
+    <header className="bg-neutral-50">
       <nav className="container flex flex-row items-baseline justify-between py-6">
-        <Link to="/" className="text-xl font-medium">
-          Blog
-        </Link>
         <div className="flex flex-row items-baseline justify-end">
+          <Link className="font-medium" to="/" >
+            Stories
+          </Link>
+          <Link className="font-medium" to="/gear">
+            Gear
+          </Link>
           <Link className="font-medium" to="/about">
             About
           </Link>
         </div>
       </nav>
     </header>
-  )
-}
-
-export default Navbar
+    )
+  }
+  
+  export default Navbar

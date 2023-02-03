@@ -6,6 +6,8 @@ module.exports = {
     siteUrl: `https://outer.pl`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-source-strapi",
       options: {
@@ -27,5 +29,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby image gallery example`,
+        short_name: `GIG Example`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `browser`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 }
