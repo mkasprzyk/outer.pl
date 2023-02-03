@@ -1,11 +1,35 @@
 import React from "react"
-// import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import Gallery from '@browniebroke/gatsby-image-gallery'
 
-const IndexPage = () => {
+export const pageQuery = graphql`
+    query {
+      allStrapiPhoto {
+        edges {
+          node {
+            id
+            name
+            image {
+              formats {
+                small {
+                  url
+                }
+              }
+              url
+            }
+          }
+        }
+      }
+    }
+  `
+
+const IndexPage = ({data}) => {
+  const images = data.allStrapiPhoto.edges.map(({ node }) => {})
+  console.log(images)
+
   return (
     <Layout>
       <Seo seo={{ metaTitle: "Stories" }} />
