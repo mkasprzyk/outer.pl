@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <header className="bg-neutral-50">
       <nav className="container flex flex-row items-baseline justify-between py-6">
-        <div className="flex flex-row items-baseline justify-end">
+        <div className="flex flex-row space-x-4 items-baseline justify-end">
           <Link className="font-medium" to="/" >
             Stories
           </Link>
