@@ -10,12 +10,13 @@ export const pageQuery = graphql`
       allStrapiPhoto {
         edges {
           node {
+            name
             image {
               localFile {
                 childImageSharp {
                   thumb: gatsbyImageData(
-                    width: 270
-                    height: 270
+                    width: 1080
+                    height: 1080
                     placeholder: BLURRED
                   )
                   full: gatsbyImageData(layout: FULL_WIDTH)
@@ -29,7 +30,12 @@ export const pageQuery = graphql`
   `
 
 const IndexPage = ({data}) => {
-  const images = data.allStrapiPhoto.edges.map(({ node }) => node.image.localFile.childImageSharp)
+  const images = data.allStrapiPhoto.edges.map(({ node }) => {
+    return {
+      title: node.name,
+      ...node.image.localFile.childImageSharp
+    }
+  })
   console.log(images)
 
   return (
