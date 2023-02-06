@@ -8,6 +8,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-strapi",
       options: {
@@ -17,12 +19,7 @@ module.exports = {
           {
             singularName: "photo",
             queryParams: {
-              populate: {
-                name: "*",
-                image: "*",
-                location: "*",
-                image: "*"
-              },
+              populate: "*"
             },
           },
         ],
@@ -52,7 +49,5 @@ module.exports = {
     //     display: `browser`,
     //   },
     // },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
   ],
 }

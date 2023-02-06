@@ -10,15 +10,17 @@ export const pageQuery = graphql`
       allStrapiPhoto {
         edges {
           node {
-            id
-            name
             image {
-              formats {
-                small {
-                  url
+              localFile {
+                childImageSharp {
+                  thumb: gatsbyImageData(
+                    width: 270
+                    height: 270
+                    placeholder: BLURRED
+                  )
+                  full: gatsbyImageData(layout: FULL_WIDTH)
                 }
               }
-              url
             }
           }
         }
@@ -27,14 +29,14 @@ export const pageQuery = graphql`
   `
 
 const IndexPage = ({data}) => {
-  const images = data.allStrapiPhoto.edges.map(({ node }) => {})
+  const images = data.allStrapiPhoto.edges.map(({ node }) => node.image.localFile.childImageSharp)
   console.log(images)
 
   return (
     <Layout>
       <Seo seo={{ metaTitle: "Stories" }} />
       <main className="container flex mt-4">
-        <Gallery/>
+        <Gallery images={images}/>
       </main>
     </Layout>
   )
